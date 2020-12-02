@@ -1,0 +1,161 @@
+--------------------------------------------------------
+--  File created - Thursday-July-16-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence ANS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ANS_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence USER_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "USER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence QUE_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "QUE_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Table USER_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "USER_TABLE" 
+   (	"U_ID" NUMBER(10,0), 
+	"ANSWER" VARCHAR2(35 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"PASSWORD" VARCHAR2(16 BYTE), 
+	"PHONE" NUMBER(19,0), 
+	"SECONDARYQUESTION" VARCHAR2(35 BYTE), 
+	"UNAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table ANSWER_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "ANSWER_TABLE" 
+   (	"ANS_ID" NUMBER(10,0), 
+	"VALUE" LONG, 
+	"QUE_ID" NUMBER(10,0), 
+	"U_ID" NUMBER(10,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table QUESTION_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "QUESTION_TABLE" 
+   (	"QUE_ID" NUMBER(10,0), 
+	"VALUE" VARCHAR2(3999 BYTE), 
+	"U_ID" NUMBER(10,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into USER_TABLE
+SET DEFINE OFF;
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (14,'now','bal.thakur@gmail.com','3443',232456778,'when','Baljeet');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (15,'red','rawatsachin2801@gmail.com','Sachin123',12345,'What is your favourite color?','Sachin Rawat');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (16,'Shakaal','vishalRaghav@gmail.com','VR@123456',1234567890,'Who was your childhood hero?','Vishal Raghav');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (17,'Shakaal','dn344@gmail.com','Divya@12345',9827236489,'Who was your childhood hero?','Divya Naithani');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (18,'red','sr687@snu.edu.in','qwerty12345',9818030821,'What is your favourite color?','Sachin Rawat');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (19,'Shakaal','dn344@snu.edu.in','Divya@123',9877267829,'Who was your childhood hero?','Divyansh ');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (20,'Black','rawatsachin1090@gmail.com','Sachin@123',9711981869,'What is your favourite color?','Sachin');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (21,'bheem','kumarvarun@gmail.com','KumarVarun',9876432156,'Who was your childhood hero?','Varun Kumar');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (41,'now','bal.thakur@gmail.com','3443',232456778,'when','Baljeet');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (42,'now','bal.thakur@gmail.com','3443',232456778,'when','Baljeet');
+Insert into USER_TABLE (U_ID,ANSWER,EMAIL,PASSWORD,PHONE,SECONDARYQUESTION,UNAME) values (43,'now','bal.thakur@gmail.com','3443',232456778,'when','Baljeet');
+REM INSERTING into ANSWER_TABLE
+SET DEFINE OFF;
+Insert into ANSWER_TABLE (ANS_ID,VALUE,QUE_ID,U_ID) values (1,'What is the difference between java and java EE?',8,19);
+Insert into ANSWER_TABLE (ANS_ID,VALUE,QUE_ID,U_ID) values (21,'Oops is nothing but object oriented programming. 
+
+
+',6,20);
+REM INSERTING into QUESTION_TABLE
+SET DEFINE OFF;
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (6,'What is oops?',19);
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (7,'Why students prefer learning java?',19);
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (8,'Why java is so secure?',19);
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (9,'What is the difference between encapsulation and abstraction?',18);
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (11,'What is session management in java',18);
+Insert into QUESTION_TABLE (QUE_ID,VALUE,U_ID) values (21,'What is java EE?',20);
+--------------------------------------------------------
+--  DDL for Index SYS_C007770
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS_C007770" ON "USER_TABLE" ("U_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007766
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS_C007766" ON "ANSWER_TABLE" ("ANS_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007768
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS_C007768" ON "QUESTION_TABLE" ("QUE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table USER_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "USER_TABLE" ADD PRIMARY KEY ("U_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "USER_TABLE" MODIFY ("U_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ANSWER_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "ANSWER_TABLE" ADD PRIMARY KEY ("ANS_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "ANSWER_TABLE" MODIFY ("ANS_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table QUESTION_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "QUESTION_TABLE" ADD PRIMARY KEY ("QUE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "QUESTION_TABLE" MODIFY ("QUE_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table ANSWER_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "ANSWER_TABLE" ADD CONSTRAINT "FKC06B980D7AEED0B5" FOREIGN KEY ("U_ID")
+	  REFERENCES "USER_TABLE" ("U_ID") ENABLE;
+  ALTER TABLE "ANSWER_TABLE" ADD CONSTRAINT "FKC06B980D8EF5CC84" FOREIGN KEY ("QUE_ID")
+	  REFERENCES "QUESTION_TABLE" ("QUE_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table QUESTION_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "QUESTION_TABLE" ADD CONSTRAINT "FK902FD6357AEED0B5" FOREIGN KEY ("U_ID")
+	  REFERENCES "USER_TABLE" ("U_ID") ENABLE;

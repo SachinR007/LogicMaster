@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('Hydrangeas.jpg');
+}
+</style>
+	<meta charset="ISO-8859-1">
+	<title>Sign In</title>
+	<link rel="stylesheet"  href="style1.css">
+</head>
+<body bgcolor="3D2CA0">
+	<div class="container">
+		<h1 class="label">SIGN IN</h1><hr>
+		<form class="login_form" method="post" onsubmit="return validation()" action="PasswordCheck"> 
+			<div class="font">Email
+			<input type="text" name="email" autocomplete="off" id="emails"><br>
+			<span id="email" style="color:red"></span>
+			</div>
+			
+			
+			
+			<div class="font font2">Password
+			<input type="password" name="password" autocomplete="off" id="pass">
+			<span id="password" style="color:red"></span>
+			</div>
+			
+			
+		
+			<input class="checkbox" type="checkbox" onclick="myFunction()">Show Password
+			<button type="submit">Sign In</button>
+		</form>
+		&emsp;&emsp;&emsp;<a href="signUp.html" style="padding-bottom: 30px;" >Create a new user</a><br>
+		&emsp;&emsp;&emsp;<a href="forgotPass.html" style="padding-bottom: 30px;" >Forgot your password</a><br><br>
+	</div>
+	<script src="sign_validation.js"></script>
+</body>
+</html>
